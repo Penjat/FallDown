@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0B2BE0F821F3C4F3008A9DD2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2BE0F721F3C4F3008A9DD2 /* AppDelegate.m */; };
 		0B2BE0FA21F3C4F3008A9DD2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B2BE0F921F3C4F3008A9DD2 /* GameScene.sks */; };
-		0B2BE0FC21F3C4F3008A9DD2 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B2BE0FB21F3C4F3008A9DD2 /* Actions.sks */; };
 		0B2BE0FF21F3C4F3008A9DD2 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2BE0FE21F3C4F3008A9DD2 /* GameScene.m */; };
 		0B2BE10221F3C4F3008A9DD2 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2BE10121F3C4F3008A9DD2 /* GameViewController.m */; };
 		0B2BE10521F3C4F3008A9DD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2BE10321F3C4F3008A9DD2 /* Main.storyboard */; };
@@ -42,7 +41,6 @@
 		0B2BE0F621F3C4F3008A9DD2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0B2BE0F721F3C4F3008A9DD2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0B2BE0F921F3C4F3008A9DD2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		0B2BE0FB21F3C4F3008A9DD2 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		0B2BE0FD21F3C4F3008A9DD2 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		0B2BE0FE21F3C4F3008A9DD2 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		0B2BE10021F3C4F3008A9DD2 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				0B2BE0F621F3C4F3008A9DD2 /* AppDelegate.h */,
 				0B2BE0F721F3C4F3008A9DD2 /* AppDelegate.m */,
 				0B2BE0F921F3C4F3008A9DD2 /* GameScene.sks */,
-				0B2BE0FB21F3C4F3008A9DD2 /* Actions.sks */,
 				0B2BE0FD21F3C4F3008A9DD2 /* GameScene.h */,
 				0B2BE0FE21F3C4F3008A9DD2 /* GameScene.m */,
 				0B2BE10021F3C4F3008A9DD2 /* GameViewController.h */,
@@ -250,7 +247,6 @@
 				0B2BE0FA21F3C4F3008A9DD2 /* GameScene.sks in Resources */,
 				0B2BE10721F3C4F5008A9DD2 /* Assets.xcassets in Resources */,
 				0B2BE10A21F3C4F5008A9DD2 /* LaunchScreen.storyboard in Resources */,
-				0B2BE0FC21F3C4F3008A9DD2 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
