@@ -9,10 +9,13 @@
 #import "GameViewController.h"
 #import "GameScene.h"
 
+
+
 @implementation GameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"opening game scene");
 
     // Load the SKScene from 'GameScene.sks'
     GameScene *scene = (GameScene *)[SKScene nodeWithFileNamed:@"GameScene"];
@@ -27,6 +30,9 @@
     
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+    
+    
+    
 }
 
 - (BOOL)shouldAutorotate {

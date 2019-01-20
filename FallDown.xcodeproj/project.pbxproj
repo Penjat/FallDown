@@ -17,6 +17,8 @@
 		0B2BE10D21F3C4F5008A9DD2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2BE10C21F3C4F5008A9DD2 /* main.m */; };
 		0B2BE11721F3C4F5008A9DD2 /* FallDownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2BE11621F3C4F5008A9DD2 /* FallDownTests.m */; };
 		0B2BE12221F3C4F5008A9DD2 /* FallDownUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2BE12121F3C4F5008A9DD2 /* FallDownUITests.m */; };
+		0B2BE13121F3CE10008A9DD2 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2BE13021F3CE10008A9DD2 /* MainMenuViewController.m */; };
+		0B2BE13421F424A9008A9DD2 /* GameManagerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2BE13321F424A9008A9DD2 /* GameManagerDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		0B2BE11D21F3C4F5008A9DD2 /* FallDownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallDownUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2BE12121F3C4F5008A9DD2 /* FallDownUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FallDownUITests.m; sourceTree = "<group>"; };
 		0B2BE12321F3C4F5008A9DD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B2BE12F21F3CE10008A9DD2 /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		0B2BE13021F3CE10008A9DD2 /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		0B2BE13221F424A9008A9DD2 /* GameManagerDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameManagerDataModel.h; sourceTree = "<group>"; };
+		0B2BE13321F424A9008A9DD2 /* GameManagerDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameManagerDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +117,12 @@
 				0B2BE0F921F3C4F3008A9DD2 /* GameScene.sks */,
 				0B2BE0FD21F3C4F3008A9DD2 /* GameScene.h */,
 				0B2BE0FE21F3C4F3008A9DD2 /* GameScene.m */,
+				0B2BE13221F424A9008A9DD2 /* GameManagerDataModel.h */,
+				0B2BE13321F424A9008A9DD2 /* GameManagerDataModel.m */,
 				0B2BE10021F3C4F3008A9DD2 /* GameViewController.h */,
 				0B2BE10121F3C4F3008A9DD2 /* GameViewController.m */,
+				0B2BE12F21F3CE10008A9DD2 /* MainMenuViewController.h */,
+				0B2BE13021F3CE10008A9DD2 /* MainMenuViewController.m */,
 				0B2BE10321F3C4F3008A9DD2 /* Main.storyboard */,
 				0B2BE10621F3C4F5008A9DD2 /* Assets.xcassets */,
 				0B2BE10821F3C4F5008A9DD2 /* LaunchScreen.storyboard */,
@@ -275,6 +285,8 @@
 				0B2BE10221F3C4F3008A9DD2 /* GameViewController.m in Sources */,
 				0B2BE10D21F3C4F5008A9DD2 /* main.m in Sources */,
 				0B2BE0F821F3C4F3008A9DD2 /* AppDelegate.m in Sources */,
+				0B2BE13121F3CE10008A9DD2 /* MainMenuViewController.m in Sources */,
+				0B2BE13421F424A9008A9DD2 /* GameManagerDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
