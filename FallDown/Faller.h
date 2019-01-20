@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)addToScore:(Faller*)faller;
 @end
 
-@interface Faller : SKSpriteNode
+@interface Faller : SKLabelNode
 
 @property (weak,nonatomic) id <FallerViewController>delegate;
 -(void)reachedTheBottom;

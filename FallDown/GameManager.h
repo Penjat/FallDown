@@ -8,19 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+@class FallerData;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol SpriteCreator
 
--(void)createFallerAtPosition:(float)xPosition;
+-(void)createFaller:(FallerData*)fallerData AtPosition:(float)xPosition;
 -(float)getScreenSize;
 
 @end
 
 @interface GameManager : NSObject
 
-@property (weak,nonatomic)id<SpriteCreator>delegate;
-@property float playableArea;
+
 
 -(instancetype)initWithDelegate:(id<SpriteCreator>)delegate;
 -(void)startGame;

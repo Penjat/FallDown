@@ -9,13 +9,14 @@
 #import <SpriteKit/SpriteKit.h>
 #import "Faller.h"
 #import "GameManager.h"
+#import "FallerData.h";
 
 @interface GameScene : SKScene <SKPhysicsContactDelegate,FallerViewController>
 
 
 @property (strong,nonatomic) SKSpriteNode *paddel;
 
--(void)createFallerAtPosition:(float)point;
+-(void)createFaller:(FallerData*)fallerData AtPosition:(float)point;
 -(float)getScreenSize;
 -(void)addToScore;
 

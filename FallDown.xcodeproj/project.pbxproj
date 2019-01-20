@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1B3E2521F4CDBA00546BD0 /* FallerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B3E2421F4CDBA00546BD0 /* FallerData.m */; };
+		0B1B3E2821F4D27000546BD0 /* FallerDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B3E2721F4D27000546BD0 /* FallerDatabase.m */; };
 		0B2BE0F821F3C4F3008A9DD2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2BE0F721F3C4F3008A9DD2 /* AppDelegate.m */; };
 		0B2BE0FA21F3C4F3008A9DD2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B2BE0F921F3C4F3008A9DD2 /* GameScene.sks */; };
 		0B2BE0FF21F3C4F3008A9DD2 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2BE0FE21F3C4F3008A9DD2 /* GameScene.m */; };
@@ -40,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B1B3E2321F4CDBA00546BD0 /* FallerData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FallerData.h; sourceTree = "<group>"; };
+		0B1B3E2421F4CDBA00546BD0 /* FallerData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FallerData.m; sourceTree = "<group>"; };
+		0B1B3E2621F4D27000546BD0 /* FallerDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FallerDatabase.h; sourceTree = "<group>"; };
+		0B1B3E2721F4D27000546BD0 /* FallerDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FallerDatabase.m; sourceTree = "<group>"; };
 		0B2BE0F321F3C4F3008A9DD2 /* FallDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2BE0F621F3C4F3008A9DD2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0B2BE0F721F3C4F3008A9DD2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,6 +134,10 @@
 				0B2BE13021F3CE10008A9DD2 /* MainMenuViewController.m */,
 				0B2BE13521F4397E008A9DD2 /* Faller.h */,
 				0B2BE13621F4397E008A9DD2 /* Faller.m */,
+				0B1B3E2321F4CDBA00546BD0 /* FallerData.h */,
+				0B1B3E2421F4CDBA00546BD0 /* FallerData.m */,
+				0B1B3E2621F4D27000546BD0 /* FallerDatabase.h */,
+				0B1B3E2721F4D27000546BD0 /* FallerDatabase.m */,
 				0B2BE10321F3C4F3008A9DD2 /* Main.storyboard */,
 				0B2BE10621F3C4F5008A9DD2 /* Assets.xcassets */,
 				0B2BE10821F3C4F5008A9DD2 /* LaunchScreen.storyboard */,
@@ -289,10 +299,12 @@
 				0B2BE0FF21F3C4F3008A9DD2 /* GameScene.m in Sources */,
 				0B2BE10221F3C4F3008A9DD2 /* GameViewController.m in Sources */,
 				0B2BE13721F4397E008A9DD2 /* Faller.m in Sources */,
+				0B1B3E2821F4D27000546BD0 /* FallerDatabase.m in Sources */,
 				0B2BE10D21F3C4F5008A9DD2 /* main.m in Sources */,
 				0B2BE0F821F3C4F3008A9DD2 /* AppDelegate.m in Sources */,
 				0B2BE13121F3CE10008A9DD2 /* MainMenuViewController.m in Sources */,
 				0B2BE13421F424A9008A9DD2 /* GameManager.m in Sources */,
+				0B1B3E2521F4CDBA00546BD0 /* FallerData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,16 +17,20 @@ enum categgoryMask {
     
 };
 
-@interface GameScene ()
+@interface GameScene (){
+    
+    
+}
 
 @property (strong,nonatomic) GameManager *gameManager;
+@property float playerYPos;
 
 @end
 
-@implementation GameScene {
+@implementation GameScene
     
 
-}
+
 -(float)getScreenSize{
     
     return self.size.width;
@@ -37,36 +41,57 @@ enum categgoryMask {
 }
 - (void)didMoveToView:(SKView *)view {
     
+    
+    
+    
     self.gameManager = [[GameManager alloc]initWithDelegate:self];
     
     
     self.physicsWorld.contactDelegate = self;
     
-    
+    //--------------- Create the Player--------------------------------
     self.paddel = [SKSpriteNode spriteNodeWithColor:UIColor.redColor size:CGSizeMake(100.0, 15.0)] ;
     self.paddel.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(100.0, 15.0)];
     [self addChild:self.paddel];
+    
+    self.playerYPos = (-self.size.height /2.0)+80.0;
+    self.paddel.position = CGPointMake(0, self.playerYPos);
     
     
     self.paddel.physicsBody.collisionBitMask = 2;
     self.paddel.physicsBody.contactTestBitMask = 1;
     self.paddel.physicsBody.categoryBitMask = 1;
-    self.paddel.physicsBody.dynamic = YES;
+    self.paddel.physicsBody.dynamic = NO;
+    //-----------------------------------------------------------------
     
-    //[self createFallerAtPosition:CGPointMake(0, self.size.height/2)];
+    //[self.gameManager startGame];
+    //TODO set up level intro
+    [self startIntro];
+    
+}
+-(void)startIntro{
+    NSLog(@"starting intro");
+    SKLabelNode *levelIntro = [[SKLabelNode alloc]initWithFontNamed:@"ArialRoundedMTBold"];
     
     
-    [self.gameManager startGame];
+}
+-(void)endIntro{
     
 }
 
--(void)createFallerAtPosition:(float)xPosition{
+-(void)createFaller:(FallerData*)fallerData AtPosition:(float)xPosition{
     
     //create the size of the sprite
     CGSize fallerSize = CGSizeMake(100.0, 100.0);
     
     //create sprite and physics body
-    Faller *faller = [Faller spriteNodeWithColor:UIColor.blueColor size:fallerSize];
+    //Faller *faller = [Faller spriteNodeWithColor:UIColor.blueColor size:fallerSize];
+    Faller *faller = [[Faller alloc]initWithFontNamed:@"ArialRoundedMTBold"];
+    
+    //TODO pass the fallerData into Faller
+    faller.text = fallerData.emoji;
+    faller.fontSize = 180.0;
+    
     faller.delegate = self;
     faller.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:fallerSize];
     
@@ -128,7 +153,7 @@ enum categgoryMask {
     
     CGPoint touchPoint = [touch locationInNode:self];
     
-    self.paddel.position = CGPointMake(touchPoint.x, 0.0);
+    self.paddel.position = CGPointMake(touchPoint.x, self.playerYPos);
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -137,7 +162,7 @@ enum categgoryMask {
     
     CGPoint touchPoint = [touch locationInNode:self];
     
-    self.paddel.position = CGPointMake(touchPoint.x, 0.0);
+    self.paddel.position = CGPointMake(touchPoint.x, self.playerYPos);
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
