@@ -72,11 +72,42 @@ enum categgoryMask {
 -(void)startIntro{
     NSLog(@"starting intro");
     SKLabelNode *levelIntro = [[SKLabelNode alloc]initWithFontNamed:@"ArialRoundedMTBold"];
+    [self addChild:levelIntro];
     
+    levelIntro.text = @"Level 1";
+    levelIntro.position = CGPointMake(0, -300.0);
+    levelIntro.alpha = 0.0;
+    levelIntro.fontSize = 45.0;
+    
+    
+    //1
+    SKAction *moveToCenter = [SKAction moveTo:CGPointMake(0.0, 0.0) duration:1.5];
+    SKAction *fadeIn = [SKAction fadeInWithDuration:2.5];
+    
+    SKAction *fadeInAndMove = [SKAction group:@[moveToCenter,fadeIn]];
+    
+    //2
+    SKAction *wait = [SKAction waitForDuration:3.0];
+    
+    //3
+    SKAction *moveAway = [SKAction moveTo:CGPointMake(0.0, 300.0) duration:1.2];
+    SKAction *fadeOut = [SKAction fadeOutWithDuration:0.5];
+    
+    SKAction *fadeOutAndMove = [SKAction group:@[moveAway,fadeOut]];
+    
+    //4
+    SKAction *startGame = [SKAction performSelector:@selector(startLevel) onTarget:self];
+    
+    //5
+    SKAction *removeSelf = [SKAction removeFromParent];
+    
+    SKAction *introSequence = [SKAction sequence:@[fadeInAndMove,wait,fadeOutAndMove,startGame,removeSelf]];
+    
+    [levelIntro runAction:introSequence];
     
 }
--(void)endIntro{
-    
+-(void)startLevel{
+    [self.gameManager startGame];
 }
 
 -(void)createFaller:(FallerData*)fallerData AtPosition:(float)xPosition{
