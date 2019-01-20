@@ -7,23 +7,44 @@
 //
 
 #import "GameScene.h"
+
+
+
 enum categgoryMask {
     PADDEL = 1,
     FALLER = 1<<1
     
     
 };
+
+@interface GameScene ()
+
+@property (strong,nonatomic) GameManager *gameManager;
+
+@end
+
 @implementation GameScene {
     
+
+}
+-(float)getScreenSize{
+    
+    return self.size.width;
 }
 
-
+-(void)addToScore:(Faller*)faller{
+    [faller removeFromParent];
+}
 - (void)didMoveToView:(SKView *)view {
+    
+    self.gameManager = [[GameManager alloc]initWithDelegate:self];
+    
+    
     self.physicsWorld.contactDelegate = self;
     
     
     self.paddel = [SKSpriteNode spriteNodeWithColor:UIColor.redColor size:CGSizeMake(100.0, 15.0)] ;
-    self.paddel.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(100.0, 100.0)];
+    self.paddel.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(100.0, 15.0)];
     [self addChild:self.paddel];
     
     
@@ -32,31 +53,47 @@ enum categgoryMask {
     self.paddel.physicsBody.categoryBitMask = 1;
     self.paddel.physicsBody.dynamic = YES;
     
+    //[self createFallerAtPosition:CGPointMake(0, self.size.height/2)];
     
     
-    
-    SKSpriteNode *testBlock = [SKSpriteNode spriteNodeWithColor:UIColor.blueColor size:CGSizeMake(100.0, 100.0)];
-    testBlock.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(100.0, 100.0)];
-    testBlock.position = CGPointMake(300, 0);
-    testBlock.physicsBody.collisionBitMask = 1;
-    testBlock.physicsBody.contactTestBitMask = 1;
-    testBlock.physicsBody.categoryBitMask = 2;
-    testBlock.physicsBody.dynamic = YES;
-    
-    
-    SKAction *fallDown = [SKAction moveTo:CGPointMake(300, 300) duration:2.0];
-    SKAction *testAction = [SKAction performSelector:@selector(testCall) onTarget:self];
-    
-    [testBlock runAction:testAction];
-    
-    
-    [self addChild:testBlock];
+    [self.gameManager startGame];
     
 }
--(void)testCall{
+
+-(void)createFallerAtPosition:(float)xPosition{
     
-    NSLog(@"test call");
+    //create the size of the sprite
+    CGSize fallerSize = CGSizeMake(100.0, 100.0);
+    
+    //create sprite and physics body
+    Faller *faller = [Faller spriteNodeWithColor:UIColor.blueColor size:fallerSize];
+    faller.delegate = self;
+    faller.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:fallerSize];
+    
+    //set the position
+    faller.position = CGPointMake(xPosition, self.size.height);
+    
+    //set up masks
+    faller.physicsBody.collisionBitMask = 1;
+    faller.physicsBody.contactTestBitMask = 1;
+    faller.physicsBody.categoryBitMask = 2;
+    faller.physicsBody.dynamic = YES;
+    
+    //set it in motion and the add to score
+    SKAction *fallDown = [SKAction moveTo:CGPointMake(xPosition, -self.size.height/2) duration:5.0];
+    SKAction *addToScore = [SKAction performSelector:@selector(reachedTheBottom) onTarget:faller];
+    
+    
+    
+    
+    [faller runAction:fallDown];
+    [faller runAction:[SKAction sequence:@[fallDown,addToScore] ]];
+    
+    //add it to scene
+    [self addChild:faller];
+    
 }
+
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     NSLog(@"contact has started.");
     if(contact.bodyA.categoryBitMask & FALLER ){
@@ -115,5 +152,7 @@ enum categgoryMask {
 -(void)update:(CFTimeInterval)currentTime {
     // Called before each frame is rendered
 }
+
+
 
 @end

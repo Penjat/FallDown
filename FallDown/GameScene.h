@@ -7,7 +7,16 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "Faller.h"
+#import "GameManager.h"
 
-@interface GameScene : SKScene <SKPhysicsContactDelegate>
+@interface GameScene : SKScene <SKPhysicsContactDelegate,FallerViewController>
+
+
 @property (strong,nonatomic) SKSpriteNode *paddel;
+
+-(void)createFallerAtPosition:(float)point;
+-(float)getScreenSize;
+-(void)addToScore;
+
 @end
