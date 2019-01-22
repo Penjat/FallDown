@@ -12,12 +12,16 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol FallerViewController
+
+
 -(void)addToScore:(Faller*)faller;
 @end
 
 @interface Faller : SKLabelNode
 
 @property (weak,nonatomic) id <FallerViewController>delegate;
+@property (nonatomic)BOOL shouldCatch;
+-(instancetype)initWithString:(NSString*)emoji shouldCatch:(BOOL)shouldCatch;
 -(void)reachedTheBottom;
 
 

@@ -66,15 +66,16 @@ enum categgoryMask {
     
     //[self.gameManager startGame];
     //TODO set up level intro
-    [self startIntro];
+    NSString *levelName = [self.gameManager prepareLevel];
+    [self startIntroWithName:levelName];
     
 }
--(void)startIntro{
+-(void)startIntroWithName:(NSString*)levelName{
     NSLog(@"starting intro");
     SKLabelNode *levelIntro = [[SKLabelNode alloc]initWithFontNamed:@"ArialRoundedMTBold"];
     [self addChild:levelIntro];
     
-    levelIntro.text = @"Level 1";
+    levelIntro.text = levelName;
     levelIntro.position = CGPointMake(0, -300.0);
     levelIntro.alpha = 0.0;
     levelIntro.fontSize = 45.0;
@@ -87,7 +88,7 @@ enum categgoryMask {
     SKAction *fadeInAndMove = [SKAction group:@[moveToCenter,fadeIn]];
     
     //2
-    SKAction *wait = [SKAction waitForDuration:3.0];
+    SKAction *wait = [SKAction waitForDuration:1.4];
     
     //3
     SKAction *moveAway = [SKAction moveTo:CGPointMake(0.0, 300.0) duration:1.2];
@@ -105,6 +106,8 @@ enum categgoryMask {
     
     [levelIntro runAction:introSequence];
     
+    
+    
 }
 -(void)startLevel{
     [self.gameManager startGame];
@@ -117,17 +120,21 @@ enum categgoryMask {
     
     //create sprite and physics body
     //Faller *faller = [Faller spriteNodeWithColor:UIColor.blueColor size:fallerSize];
-    Faller *faller = [[Faller alloc]initWithFontNamed:@"ArialRoundedMTBold"];
+    //Faller *faller = [[Faller alloc]initWithFontNamed:@"ArialRoundedMTBold"];
+    Faller *faller = [[Faller alloc]initWithString:fallerData.emoji shouldCatch:YES];
     
     //TODO pass the fallerData into Faller
-    faller.text = fallerData.emoji;
+    //faller.text = fallerData.emoji;
     faller.fontSize = 180.0;
+    [self adjustLabelFontSizeToFitRect:faller rect:fallerSize];
+    
     
     faller.delegate = self;
     faller.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:fallerSize];
     
     //set the position
     faller.position = CGPointMake(xPosition, self.size.height);
+    
     
     //set up masks
     faller.physicsBody.collisionBitMask = 1;
@@ -147,6 +154,18 @@ enum categgoryMask {
     
     //add it to scene
     [self addChild:faller];
+    
+}
+
+-(void)adjustLabelFontSizeToFitRect:(Faller*)labelNode rect:(CGSize)size {
+    
+    // Determine the font scaling factor that should let the label text fit in the given rectangle.
+    double scalingFactor = MIN(size.width / labelNode.frame.size.width, size.height / labelNode.frame.size.height);
+    
+    // Change the fontSize.
+    labelNode.fontSize *= scalingFactor;
+    
+    // Optionally move the SKLabelNode to the center of the rectangle.
     
 }
 

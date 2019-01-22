@@ -14,5 +14,5 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FallerDatabase : NSObject
 @property (strong,nonatomic) NSArray<FallerData*> *objectDatabase;
 @end
-
+ 
 NS_ASSUME_NONNULL_END

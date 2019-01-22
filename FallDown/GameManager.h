@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(instancetype)initWithDelegate:(id<SpriteCreator>)delegate;
+-(NSString*)prepareLevel;
 -(void)startGame;
 
 @end
