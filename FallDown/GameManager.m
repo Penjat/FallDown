@@ -17,7 +17,7 @@
 }
 @property (strong,nonatomic)LevelManager *levelManager;
 @property (weak,nonatomic)id<SpriteCreator>delegate;
-@property (strong,nonatomic)FallerDatabase *fallerDatabase;
+//@property (strong,nonatomic)FallerDatabase *fallerDatabase;
 @property float playableArea;
 
 @property (strong,nonatomic)Level *curLevel;
@@ -33,7 +33,7 @@
     if (self) {
         
         _delegate = delegate;
-        _fallerDatabase = [[FallerDatabase alloc]init];
+//        _fallerDatabase = [[FallerDatabase alloc]init];
         _levelManager = [[LevelManager alloc]init];
         
         self.playableArea = [self.delegate getScreenSize];
@@ -52,7 +52,7 @@
     NSLog(@"statring game");
     
     //TODO get based on the level
-    self.posibleFallers =self.fallerDatabase.objectDatabase;
+//    self.posibleFallers =self.fallerDatabase.objectDatabase;
     
     
     NSTimer *t = [NSTimer scheduledTimerWithTimeInterval: 0.5
@@ -67,20 +67,23 @@
     //can be better about choosing the ratio of these
     BOOL shouldCatch = arc4random_uniform(2);
     if(shouldCatch){
-        NSLog(@"should catch");
+        //NSLog(@"should catch");
         
         float randomPosition = arc4random_uniform(self.playableArea) - (self.playableArea/2);
         int randomFallerIndex = arc4random_uniform(self.curLevel.doCatchArray.count);
-        FallerData *fallerData = [[FallerData alloc]initWithEmoji: self.curLevel.doCatchArray [randomFallerIndex]];
+        NSString *emoji = self.curLevel.doCatchArray [randomFallerIndex];
+        
+        FallerData *fallerData = [[FallerData alloc]initWithEmoji:emoji andShouldCatch:YES ];
         [self.delegate createFaller:fallerData AtPosition:randomPosition ];
         //TODO set bool
     }else{
-        NSLog(@"should catch");
+        //NSLog(@"shouldn't catch");
         
         float randomPosition = arc4random_uniform(self.playableArea) - (self.playableArea/2);
         int randomFallerIndex = arc4random_uniform(self.curLevel.dontCatchArray.count);
         
-        FallerData *fallerData = [[FallerData alloc]initWithEmoji: self.curLevel.dontCatchArray [randomFallerIndex]];
+        NSString *emoji = self.curLevel.dontCatchArray [randomFallerIndex];
+        FallerData *fallerData = [[FallerData alloc]initWithEmoji:emoji andShouldCatch:NO ];
         [self.delegate createFaller:fallerData AtPosition:randomPosition ];
         //TODO set bool
     }

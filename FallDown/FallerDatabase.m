@@ -13,10 +13,8 @@
 {
     self = [super init];
     if (self) {
-        FallerData *star = [[FallerData alloc]initWithEmoji:@"☆"];
-        FallerData *moon = [[FallerData alloc]initWithEmoji:@"☽"];
-        FallerData *dog = [[FallerData alloc]initWithEmoji:@"❤︎"];
-        _objectDatabase = [[NSArray alloc]initWithObjects:star,moon,dog,nil];
+        
+        
     }
     return self;
 }

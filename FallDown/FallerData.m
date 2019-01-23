@@ -17,10 +17,11 @@
 
 @implementation FallerData
 
-- (instancetype)initWithEmoji:(NSString *)emoji{
+- (instancetype)initWithEmoji:(NSString *)emoji andShouldCatch:(BOOL)shouldCatch{
     self = [super init];
     if (self) {
         _emoji = emoji;
+        _shouldCatch = shouldCatch;
     }
     return self;
 }

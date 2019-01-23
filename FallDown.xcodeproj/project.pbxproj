@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B17246C21F779B00004CF47 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B17246B21F779B00004CF47 /* Level.m */; };
 		0B17246F21F77B7B0004CF47 /* LevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B17246E21F77B7B0004CF47 /* LevelManager.m */; };
+		0B1A6D7921F8BDFF00EBED0F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A6D7821F8BDFF00EBED0F /* Player.m */; };
 		0B1B3E2521F4CDBA00546BD0 /* FallerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B3E2421F4CDBA00546BD0 /* FallerData.m */; };
 		0B1B3E2821F4D27000546BD0 /* FallerDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B3E2721F4D27000546BD0 /* FallerDatabase.m */; };
 		0B2BE0F821F3C4F3008A9DD2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2BE0F721F3C4F3008A9DD2 /* AppDelegate.m */; };
@@ -48,6 +49,8 @@
 		0B17246B21F779B00004CF47 /* Level.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		0B17246D21F77B7B0004CF47 /* LevelManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelManager.h; sourceTree = "<group>"; };
 		0B17246E21F77B7B0004CF47 /* LevelManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LevelManager.m; sourceTree = "<group>"; };
+		0B1A6D7721F8BDFF00EBED0F /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		0B1A6D7821F8BDFF00EBED0F /* Player.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		0B1B3E2321F4CDBA00546BD0 /* FallerData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FallerData.h; sourceTree = "<group>"; };
 		0B1B3E2421F4CDBA00546BD0 /* FallerData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FallerData.m; sourceTree = "<group>"; };
 		0B1B3E2621F4D27000546BD0 /* FallerDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FallerDatabase.h; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 				0B1B3E2421F4CDBA00546BD0 /* FallerData.m */,
 				0B17246A21F779B00004CF47 /* Level.h */,
 				0B17246B21F779B00004CF47 /* Level.m */,
+				0B1A6D7721F8BDFF00EBED0F /* Player.h */,
+				0B1A6D7821F8BDFF00EBED0F /* Player.m */,
 				0B17246D21F77B7B0004CF47 /* LevelManager.h */,
 				0B17246E21F77B7B0004CF47 /* LevelManager.m */,
 				0B1B3E2621F4D27000546BD0 /* FallerDatabase.h */,
@@ -310,6 +315,7 @@
 				0B2BE0FF21F3C4F3008A9DD2 /* GameScene.m in Sources */,
 				0B17246F21F77B7B0004CF47 /* LevelManager.m in Sources */,
 				0B2BE10221F3C4F3008A9DD2 /* GameViewController.m in Sources */,
+				0B1A6D7921F8BDFF00EBED0F /* Player.m in Sources */,
 				0B2BE13721F4397E008A9DD2 /* Faller.m in Sources */,
 				0B1B3E2821F4D27000546BD0 /* FallerDatabase.m in Sources */,
 				0B2BE10D21F3C4F5008A9DD2 /* main.m in Sources */,

@@ -10,12 +10,11 @@
 
 @implementation Faller
 
-- (instancetype)initWithString:(NSString *)emoji shouldCatch:(BOOL)shouldCatch
-{
+- (instancetype)initWithData:(FallerData *)data{
     self = [super initWithFontNamed:@"ArialRoundedMTBold"];
     if (self) {
-        self.text = emoji;
-        _shouldCatch = shouldCatch;
+        self.text = data.emoji;
+        _shouldCatch = data.shouldCatch;
     }
     return self;
 }

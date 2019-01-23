@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "FallerData.h"
 @class Faller;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -21,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak,nonatomic) id <FallerViewController>delegate;
 @property (nonatomic)BOOL shouldCatch;
--(instancetype)initWithString:(NSString*)emoji shouldCatch:(BOOL)shouldCatch;
+-(instancetype)initWithData:(FallerData*)data;
 -(void)reachedTheBottom;
 
 

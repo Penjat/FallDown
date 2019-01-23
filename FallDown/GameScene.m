@@ -50,7 +50,7 @@ enum categgoryMask {
     self.physicsWorld.contactDelegate = self;
     
     //--------------- Create the Player--------------------------------
-    self.paddel = [SKSpriteNode spriteNodeWithColor:UIColor.redColor size:CGSizeMake(100.0, 15.0)] ;
+    self.paddel = [Player spriteNodeWithColor:UIColor.redColor size:CGSizeMake(100.0, 15.0)] ;
     self.paddel.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(100.0, 15.0)];
     [self addChild:self.paddel];
     
@@ -121,7 +121,7 @@ enum categgoryMask {
     //create sprite and physics body
     //Faller *faller = [Faller spriteNodeWithColor:UIColor.blueColor size:fallerSize];
     //Faller *faller = [[Faller alloc]initWithFontNamed:@"ArialRoundedMTBold"];
-    Faller *faller = [[Faller alloc]initWithString:fallerData.emoji shouldCatch:YES];
+    Faller *faller = [[Faller alloc]initWithData:fallerData];
     
     //TODO pass the fallerData into Faller
     //faller.text = fallerData.emoji;
@@ -170,19 +170,26 @@ enum categgoryMask {
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact{
-    NSLog(@"contact has started.");
-    if(contact.bodyA.categoryBitMask & FALLER ){
-        NSLog(@"bodyA is a faller");
-        [contact.bodyA.node removeFromParent];
-    }
-    if(contact.bodyB.categoryBitMask & FALLER ){
-        NSLog(@"bodyB is a faller");
-        [contact.bodyB.node removeFromParent];
-    }
     
+    NSLog(@"contact has started.");
+    [self checkContact:contact.bodyA];
+    [self checkContact:contact.bodyB];
+}
+-(void)checkContact:(SKPhysicsBody*)body{
+    if(body.categoryBitMask & FALLER ){
+        //NSLog(@"bodyA is a faller");
+        Faller *faller = body.node;
+        if(faller.shouldCatch == NO){
+            self.paddel.loseLife;
+            NSLog(@"shouldn't catch!!!!");
+        }else{
+            NSLog(@"should add to score");
+        }
+        [body.node removeFromParent];
+    }
 }
 -(void)didEndContact:(SKPhysicsContact *)contact{
-    NSLog(@"contact has ended.");
+    //NSLog(@"contact has ended.");
 }
 
 - (void)touchDownAtPoint:(CGPoint)pos {

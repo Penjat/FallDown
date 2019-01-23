@@ -11,9 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FallerData : NSObject
--(instancetype)initWithEmoji:(NSString*)emoji;
 
 @property (strong,nonatomic)NSString *emoji;
+@property (nonatomic)BOOL shouldCatch;
+
+- (instancetype)initWithEmoji:(NSString *)emoji andShouldCatch:(BOOL)shouldCatch;
 
 @end
 
