@@ -65,12 +65,27 @@
 -(void)createRandomFaller{
     //randomly choose a should catch or shouldn't catch
     //can be better about choosing the ratio of these
+    BOOL shouldCatch = arc4random_uniform(2);
+    if(shouldCatch){
+        NSLog(@"should catch");
+        
+        float randomPosition = arc4random_uniform(self.playableArea) - (self.playableArea/2);
+        int randomFallerIndex = arc4random_uniform(self.curLevel.doCatchArray.count);
+        FallerData *fallerData = [[FallerData alloc]initWithEmoji: self.curLevel.doCatchArray [randomFallerIndex]];
+        [self.delegate createFaller:fallerData AtPosition:randomPosition ];
+        //TODO set bool
+    }else{
+        NSLog(@"should catch");
+        
+        float randomPosition = arc4random_uniform(self.playableArea) - (self.playableArea/2);
+        int randomFallerIndex = arc4random_uniform(self.curLevel.dontCatchArray.count);
+        
+        FallerData *fallerData = [[FallerData alloc]initWithEmoji: self.curLevel.dontCatchArray [randomFallerIndex]];
+        [self.delegate createFaller:fallerData AtPosition:randomPosition ];
+        //TODO set bool
+    }
     
     
-    float randomPosition = arc4random_uniform(self.playableArea) - (self.playableArea/2);
-    int randomFallerIndex = arc4random_uniform(self.posibleFallers.count);
-    FallerData *fallerData = self.posibleFallers[randomFallerIndex];
-    [self.delegate createFaller:fallerData AtPosition:randomPosition ];
     
 }
 

@@ -114,7 +114,7 @@ enum categgoryMask {
 }
 
 -(void)createFaller:(FallerData*)fallerData AtPosition:(float)xPosition{
-    
+    NSLog(@"creating the faller");
     //create the size of the sprite
     CGSize fallerSize = CGSizeMake(100.0, 100.0);
     
